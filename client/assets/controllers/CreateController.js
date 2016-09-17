@@ -1,3 +1,4 @@
+console.log('angular create controller')
 app.controller('CreateController', ['$scope', 'CreateFactory', '$location', function($scope, CreateFactory, $location) {
     
     $scope.createNew = function(data){

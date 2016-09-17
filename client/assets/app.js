@@ -1,4 +1,5 @@
-var app = angular.module('app', ['ngRoute']);
+console.log("angular routes")
+var app = angular.module('app', ['ngRoute', 'ngStorage']);
 app.config(function ($routeProvider) {
     $routeProvider
     .when('/',{
@@ -13,7 +14,11 @@ app.config(function ($routeProvider) {
             templateUrl: 'partials/new.html',
             controller: 'CreateController'
         })
-        .otherwise({
+    .when('/login',{
+            templateUrl: 'partials/login.html',
+            controller: 'LogInController'
+        })
+    .otherwise({
           redirectTo: '/'
         });
 

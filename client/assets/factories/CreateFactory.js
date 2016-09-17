@@ -1,3 +1,4 @@
+console.log("angular create factory")
 app.factory('CreateFactory', function() {
     var factory = {}
     

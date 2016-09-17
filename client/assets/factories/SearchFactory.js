@@ -1,3 +1,4 @@
+console.log("angular search factory")
 app.factory('SearchFactory', function() {
     var factory = {}
     
