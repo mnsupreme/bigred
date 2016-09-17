@@ -3,28 +3,35 @@ app.config(function ($routeProvider) {
     $routeProvider
     .when('/',{
             templateUrl: 'partials/home.html',
-            controller: 'SearchController.js'
+            controller: 'SearchController'
         })
-        .when('/',{
-            templateUrl: 'partials/login.html',
-            controller: 'LogInController.js'
+        .when('/listing',{
+            templateUrl: 'partials/listing.html',
+            controller: 'SearchController'
         })
-        .when('/partials/:id',{
-            templateUrl: 'partials/',
-            controller: ''
+        .when('/login',{
+            templateUrl:'partials/login.html',
+            controller: 'LogInController'
         })
+        .when('/user/:id',{
+            templateUrl:'partials/user.html',
+            controller: 'ProfileController'
+        })
+        .when('/edit/:id',{
+            templateUrl: 'partials/edit.html',
+            controller: 'EditController'
+
         .when('/new', {
-            templateUrl: 'partials/',
-            controller: ''
+            templateUrl: 'partials/new.html',
+            controller: 'NewController'
         })
         .when('/show/:id',{
-            templateUrl: 'partials/',
-            controller: ''
+            templateUrl: 'partials/show.html',
+            controller: 'ShowController'
         })
         .otherwise({
           redirectTo: '/'
-        });
+        }),
 
 }); 
-
-
+})
