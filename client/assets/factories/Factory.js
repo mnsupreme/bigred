@@ -6,5 +6,5 @@ app.factory('defaultFactory (camel case singular)', ['$http', function($http){
   		$http.get('/route', passin).then(callback)
   	}
   return factory
-}])
-
+  
+}]);

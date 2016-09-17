@@ -2,10 +2,14 @@ var app = angular.module('app', ['ngRoute', 'ngStorage']);
 app.config(function ($routeProvider) {
     $routeProvider
     .when('/',{
-            templateUrl: 'partials/',
-            controller: ''
+            templateUrl: 'partials/home.html',
+            controller: 'SearchController.js'
         })
-        .when('/edit/:id',{
+        .when('/',{
+            templateUrl: 'partials/login.html',
+            controller: 'LogInController.js'
+        })
+        .when('/partials/:id',{
             templateUrl: 'partials/',
             controller: ''
         })
