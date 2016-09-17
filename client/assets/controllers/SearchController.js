@@ -1,9 +1,30 @@
 app.controller('SearchController', ['$scope', 'SearchFactory', '$location', function($scope, SearchFactory, $location) {
-    $scope.search = function() { //ng-click home, listing
-        console.log("hello");
-        $location.url('/search')
-        var results = SearchFactory.getSearchResults($scope.searchData) //ng-model: searchData, home, listing
-        $scope.searchResults = results; //ng-model of listing: searchResults, listing
+    
+    displayResults();
+    
+    $scope.search = function(data) { //ng-click home, listing
+        console.log(data);
+        SearchFactory.getSearchResults(data, function(result) {
+            $scope.listings = result; //display all objects
+            console.log($scope.searchResults);
+            $location.url('/search');
+        }) 
     };
+    
+    $scope.changeToNew = function() {
+        $location.url('/new');
+    }
+    
+     function displayResults() {
+        var results = SearchFactory.results;
+        console.log(results);
+        if (results !== null) {
+            $scope.listings = results;
+        }
+        console.log($scope.searchResults)
+    }
+    
+    
+    
 }]);
 

@@ -1,7 +1,10 @@
-
-       
-        
-    <body>
-        <div>TODO write content</div>
-    </body>
+<div>
+    <div ng-model="searchData.price"> hello </div>
+    <input ng-model="searchData.duration"> 
+    <button ng-click="search(searchData)"> Search </button>
+    <div ng-repeat="item in listings"> 
+    {{item}}
+    </div>
+    <button ng-click="changeToNew()"> Go to new </button>
+</div>
 

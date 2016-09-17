@@ -9,6 +9,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'partials/search.html',
             controller: 'SearchController'
         })
+    .when('/new',{
+            templateUrl: 'partials/new.html',
+            controller: 'CreateController'
+        })
         .otherwise({
           redirectTo: '/'
         });

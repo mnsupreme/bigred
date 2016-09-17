@@ -1,8 +1,12 @@
 app.factory('SearchFactory', function() {
-	var factory = {}
-    this.getSearchResults = function() {
-       console.log('factory fired')
-    }
-            
-   return factory
+    var factory = {}
+    
+    factory.getSearchResults = function(data, callback) {
+       console.log('factory fired');
+       var results = ["listing1", "listing2"]; //populate db
+       callback(results)
+       factory.results = results;
+    };
+    
+   return factory;
 })
