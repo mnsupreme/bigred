@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+app.controller('${1:ControllerNames(plural-capital naming convention)}', ['\$scope', '${2:someFactory}', $3 '\$routeParams', '\$localStorage', '\$location', function(\$scope, ${4:someFactory}, $5 \$routeParams, \$localStorage, \$location){
+		
+
+	
+	}])
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>angular controller</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

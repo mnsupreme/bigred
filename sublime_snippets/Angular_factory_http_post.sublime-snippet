@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\$http.post('/${1:route}', ${2:passin}).then(${3:callback})
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>post</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

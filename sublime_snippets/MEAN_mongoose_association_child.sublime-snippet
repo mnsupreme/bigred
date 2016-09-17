@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+_${1:association_children}:[{type: Schema.Types.ObjectId, ref: '${2:name_of_foreighn_model}'}]//one to many where this is the many
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mean child</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

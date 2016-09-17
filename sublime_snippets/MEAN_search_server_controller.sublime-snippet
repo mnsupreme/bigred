@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+this.search = function(req,res){
+    Model.find(${1:{text}:{\$regex:${2:req.body.text} /* (returns results containing the entered string) */, $options: 'i'}}).exec(function ${3:(err, results){
+      if(err){
+        console.log('no matches')
+        return
+      }
+      res.json(results)
+    }
+    })
+  }
+]]></content>
+	<tabTrigger>mean search</tabTrigger>
+	<scope>source.js</scope>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

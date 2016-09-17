@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+{
+validate:{ //make this an array of objects for multiple validation objects
+  		validator: function( $1value ){
+  			//validation function goes here
+  			$2
+  		},
+  	message:'${3:failure message goes here}'
+  	}
+ },
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mean validate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

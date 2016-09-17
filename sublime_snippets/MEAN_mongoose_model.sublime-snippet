@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+console.log('$1 server model');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+// build your friend schema and add it to the mongoose.models
+var ${2:Generic}Schema = new mongoose.Schema({
+  $3
+
+}, ${4:{timestamps: true } });
+// register the schema as a model
+var ${5:name_of_model} = mongoose.model('${5:name of model}', ${2:Generic}Schema);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mean model</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

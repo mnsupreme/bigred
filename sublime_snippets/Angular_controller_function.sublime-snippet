@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\$scope.${1:variable} = ${2:function}($3){
+	console.log('$4 controller function fired')
+}
+]]></content>
+	<tabTrigger>angular controller function</tabTrigger>
+	<scope>source.js</scope>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
