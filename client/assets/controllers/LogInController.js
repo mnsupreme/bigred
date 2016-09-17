@@ -1,14 +1,17 @@
-app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$localStorage', '$location', function($scope, someFactory,  $routeParams, $localStorage, $location){
+console.log('angular login controller')
+app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$localStorage', '$location', function($scope, UserFactory,  $routeParams, $localStorage, $location){
 		$scope.$storage = $localStorage
+		$scope.registererrors = ""
+		$scope.loginerrors = ""
 		$scope.login = function(user){
-			userFactory.login(user, function(result){
+			UserFactory.login(user, function(result){
 				if(err){
 					$scope.loginerrors = "invalid login"
 				}
-				else(
+				else{
 				$localStorage = result.data
 				$location.url('/search')
-				)
+				}
 			})
 		}
 		$scope.logout = function(){
@@ -17,14 +20,16 @@ app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$l
 		}
 
 		$scope.register = function(user){
+			console.log('register angular controller function fired')
 			for (each in user){
-				if(user[each] != null){
-					$scope.regiestererrors = "please fill in all fields"
+				if(user[each] == null){
+					$scope.registererrors = "please fill in all fields"
 					return
 				}
 			}
-			userFactory.register(user, function(result){
+			UserFactory.register(user, function(result){
 				$localStorage = result.data
+				$location('/home.html')
 			})
 		}
 	
