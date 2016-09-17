@@ -1,4 +1,4 @@
-app.controller('SearchController', ['$scope', 'SearchFactory', '$location', function($scope, SearchFactory, $location) {
+app.controller('SearchController', ['$scope', 'PostFactory', '$location', function($scope, SearchFactory, $location) {
     
     displayResults();
     
@@ -15,7 +15,7 @@ app.controller('SearchController', ['$scope', 'SearchFactory', '$location', func
         $location.url('/new');
     }
     
-     function displayResults() {
+    function displayResults() {
         var results = SearchFactory.results;
         console.log(results);
         if (results !== null) {
