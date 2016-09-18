@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <div ng-model="searchData.price"> hello </div>
     <input ng-model="searchData.zip"> 
     <button ng-click="search(searchData)"> Search </button>
@@ -6,5 +6,46 @@
         <a href="#/search/{{item.id}}" ng-click="storeItem(item)">{{item.name}}</a>
     </div>
     <button ng-click="changeToNew()"> Go to new </button>
+</div>-->
+
+
+
+
+
+<style>
+    header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+    table {
+        border-collapse: collapse; color: opacity;
+    }   
+
+    table, td, th {
+        border: 1px solid opacity;
+    }
+    .listings {
+        background: mintcream;
+        border: 5px solid darkseagreen;
+        border-radius: 10px;
+  }
+    
+</style>
+
+<header>
+    <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+</header>
+
+<h2><i>Listings</i></h2>
+
+<div class="listings">
+    <table>
+        <tr ng-repeat="item in listings">
+            <th style="align:left; padding:2%">{{item.picture}}</th>
+            <th style="align:left; padding:2%">
+                Price: {{item.price}}<br>
+                Address: {{item.address1}}<br>
+            </th>
+        </tr>
+    </table>
 </div>
+</html>
+
 
