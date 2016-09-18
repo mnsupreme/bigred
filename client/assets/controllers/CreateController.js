@@ -4,7 +4,7 @@ app.controller('CreateController', ['$scope', 'PostFactory', '$location', functi
     
     post.residents = [];
     $scope.createerror = "";
-    $scope.create = function(){
+    $scope.create = function(post){
         console.log('create angular controller function fired');
         if(post.zip.length !== 5){
             $scope.createerror = "please enter a valid zip";

@@ -10,9 +10,10 @@ app.factory('PostFactory', function() {
 
     factory.getSearchResults = function(data, callback) {
        console.log('factory fired');
-       var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
-       callback(results)
-       factory.results = results;
+       $http.post('/search', data).then(callback);
+       //var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
+       //callback(results)
+       //factory.results = results;
     };
     
     factory.storeCurrent = function(item){
