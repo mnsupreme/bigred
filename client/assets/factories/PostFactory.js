@@ -1,18 +1,21 @@
 console.log("angular post factory")
+
 app.factory('PostFactory',['$http', function($http){
     var factory = {}
     
+    
     factory.addListing = function(data, callback) {
-       console.log('create listing factory fired');
+       console.log('factory fired');
        $http.post("/new", data).then(callback)
        factory.newListing = data;
     };
 
     factory.getSearchResults = function(data, callback) {
        console.log('factory fired');
-       var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
-       callback(results)
-       factory.results = results;
+       $http.post('/search', data).then(callback);
+       //var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
+       //callback(results)
+       //factory.results = results;
     };
     
     factory.storeCurrent = function(item){
@@ -24,4 +27,5 @@ app.factory('PostFactory',['$http', function($http){
     }
     
    return factory;
+
 }])

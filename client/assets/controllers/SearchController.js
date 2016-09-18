@@ -8,7 +8,6 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
         console.log(data);
         PostFactory.getSearchResults(data, function(result) {
             $scope.listings = result; //display all objects
-            console.log($scope.searchResults);
             $location.url('/search');
         }) 
     };
