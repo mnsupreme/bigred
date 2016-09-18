@@ -1,76 +1,166 @@
- <style>
- header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+<style>
 
- .residents{
-  display: {{display}};
-}
+    body {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
-.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: opacity;
-}
+    header {background: dimgrey; color: ivory; width: 100%; margin: 0%; font-family: Tahoma
+    }
+    .residents{
+        display: {{display}};
+    }
 
-.flex-item {
-    background-color: opacity;
-    width: 50%;
-    height: 50%;
-    margin: 10px;
-}
-  </style>
- <header>
-  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+    .flex-container {
+        /*display: -webkit-flex;
+        display: flex;*/
+        width: 50%;
+        height: 100%;
+        background-color: opacity;
+        font-family: "Baskerville W01 Regular_705699";
+        margin: auto;
+        background-color: rgba(254, 216, 179, 0.6);
+    }
+
+    .flex-item {
+        background-color: opacity;
+        width: 45%;
+        margin: 0;
+        padding: 10px;
+        display: inline-block;
+        font-family: "Baskerville W01 Regular_705699";
+
+    }
+
+    .postListing {
+        justify-content: center;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+<header>
+    <h1 style="text-align:center;padding:2%;"> Subletr</h1>
 </header>
 
-<article class="article">
-  <h1>Post your listing</h1>
-  <p>Fill out the following information about your seblet space.</p><br>
+<article class="postListing" style="background-color: rgba(254, 216, 179, 0.6);">
+    <h1 style="width: 50%; margin-left: 25%; text-align: center;">Post your listing</h1>
 </article>
 
 <div class="flex-container">
-  <div class="flex-item">
- 
+    <div style="width:72%;margin:auto">
+        <div ng-repeat="resident in current.residents">
+            {{resident.ros}}: {{resident.age}}, {{resident.gender}}
+        </div>
+    </div>
+    <div style="padding:10px; width:75%;margin:auto; line-height: 30px">
+        <div class="flex-item">
+            <b>Subletter: </b>{{current.owner}}<br>
+            <b>Address: </b>{{current.address1}}<br>
+            {{current.address2}}<br>
+            <b>Price: </b>{{current.price}} <br>
+            <b>City: </b>{{current.city}}<br>
+            <b>State: </b>{{current.state}}<br>
+            <b>Zipcode: </b>{{current.zip}}<br>
+            <b>Email: </b>{{current.email}}<br>
+            <b>Phone: </b>{{current.phone}}<br>
+        </div>
 
-Subletter:<br>{{show.owner}}
-<br>
-Address:<br>{{show.address1}}
-<br>
-{{address2}}<br>
+        <div class="flex-item" style="vertical-align:top; line-height: 30px">
+            <b>Pets:</b> {{current.pets}}<br>
+            <b>Wifi: </b>{{current.wifi}} <br>
+            <b>Fridge: </b>{{current.fridge}} <br>
+            <b>Parking: </b>{{current.parking}} <br>
+            <b>Washer: </b>{{current.washer}} <br>
+            <b>Move In Date: </b>{{current.movein}}<br>
+            <b>Move Out Date: </b>{{current.moveout}}<br>
+        </div>
+    </div>
 
-City:<br>
-{{show.city}}
-State:<br>
-{{show.state}}
-Zipcode:<br>
-{{show.zip}}<br>
-Email:<br>
-{{show.email}}<br>
-Phone:<br>
-{{show.phone}}<br><br>
+    <div style="padding-left: 10%;width:95%">
+        <br><b>Short Description: <br><textarea name="description" value="about your space..." rows="40" cols="20" ng-model="post.description" style="width: 80%;height:25%"></textarea><br><br>
+    </div>
 
-<b>Pets:</b><br>
-Allowed?: {{show.pets}}
-
-<b>Appliances:</b><br>
-Wifi? {{show.wifi}}<br>
-Fridge? {{show.fridge}}<br>
-Parking? {{show.parking}}<br>
-<input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
-Move In Date {{show.movein}}<br>
-Move Out Date {{show.moveout}}
-<br><br>
-
-
-<textarea><b>Short Description: </b><br>{{show.description}}<br><br></textarea>
-
-<br><br>
 </div>
-</div>
-<div ng-repeat="each in show.residents" class="residents">
-<b>Other residents:</b><br>
-<p>Suite mate or Room mate: {{each.ros}}</p>
-<p>age: {{each.age}} </p>
-<p>gender: {{each.gender}}</p>
-</div>
+            <!--</body>
+            </html> 
+
+
+            <style>
+                header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+
+                .residents{
+                    display: {{display}};
+                }
+
+                .flex-container {
+                    display: -webkit-flex;
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    background-color: opacity;
+                }
+
+                .flex-item {
+                    background-color: opacity;
+                    width: 50%;
+                    height: 50%;
+                    margin: 10px;
+                }
+            </style>
+            <header>
+                <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+            </header>
+
+            <article class="article">
+                <h1>Post your listing</h1>
+                <p>Fill out the following information about your seblet space.</p><br>
+            </article>
+
+            <div class="flex-container">
+                <div class="flex-item">
+
+
+                    Subletter:<br>{{show.owner}}
+                    <br>
+                    Address:<br>{{show.address1}}
+                    <br>
+                    {{address2}}<br>
+
+                    City:<br>
+                    {{show.city}}
+                    State:<br>
+                    {{show.state}}
+                    Zipcode:<br>
+                    {{show.zip}}<br>
+                    Email:<br>
+                    {{show.email}}<br>
+                    Phone:<br>
+                    {{show.phone}}<br><br>
+
+                    <b>Pets:</b><br>
+                    Allowed?: {{show.pets}}
+
+                    <b>Appliances:</b><br>
+                    Wifi? {{show.wifi}}<br>
+                    Fridge? {{show.fridge}}<br>
+                    Parking? {{show.parking}}<br>
+                    <input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
+                    Move In Date {{show.movein}}<br>
+                    Move Out Date {{show.moveout}}
+                    <br><br>
+
+
+                    <textarea><b>Short Description: </b><br>{{show.description}}<br><br></textarea>
+
+                    <br><br>
+                </div>
+            </div>
+            <div ng-repeat="each in show.residents" class="residents">
+                <b>Other residents:</b><br>
+                <p>Suite mate or Room mate: {{each.ros}}</p>
+                <p>age: {{each.age}} </p>
+                <p>gender: {{each.gender}}</p>
+            </div>-->

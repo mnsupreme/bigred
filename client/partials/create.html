@@ -1,106 +1,124 @@
+<style>
+ 
+ body {
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
 
-  <style>
- header {background: darkseagreen;color: white; width: 100%; margin: 0%}
-
+ header {background: cadetblue; color: ivory; width: 100%; margin: 0%; font-family: Tahoma
+    }
  .residents{
   display: {{display}};
 }
-  </style>
-  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
-</header>
 
-<article class="article">
-  <h1>Post your listing</h1>
-  <p>Fill out the following information about your seblet space.</p><br>
-</article>
-
-<head>
-<style>
 .flex-container {
-    display: -webkit-flex;
-    display: flex;
-    width: 100%;
-    height: 100%;
+    /*display: -webkit-flex;
+    display: flex;*/
+    width: 50%;
     background-color: opacity;
+    font-family: "Baskerville W01 Regular_705699";
+    margin: auto;
+    background-color: rgba(254, 216, 179, 0.6);
 }
 
 .flex-item {
     background-color: opacity;
-    width: 50%;
-    height: 50%;
-    margin: 10px;
+    width: 46%;
+    margin: 0;
+    display: inline-block;
+    font-family: "Baskerville W01 Regular_705699";
+    padding: 10px;
+
 }
+
+.flex-item input[type=text]{
+    width: 160px;
+}
+
+.postListing {
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 </style>
-</head>
+
+ <header>
+    <h1 style="text-align:center;padding:2%;"> Subletr</h1>
+</header>
+
+<article class="postListing" style="background-color: rgba(254, 216, 179, 0.6);">
+  <h1 style="width: 50%; margin-left: 25%; text-align: center;">Post your listing</h1>
+  <p>Fill out the following information about your seblet space.</p><br>
+</article>
 
 <div class="flex-container">
-  <div class="flex-item">
-  <form ng-submit="append(resident)">
-<select ng-model="resident.ros">
-  <option>suite mate</option>
-  <option>room mate</option>
-</select>
-<label> age</label><input type="text" ng-model="resident.age">
-<select ng-model="resident.gender">
-<option>male</option>
-<option>female</option>
-<option>other</option>
-</select>
-<button type="submit">add resident</button>
-</form>
-<form ng-submit="create(post)">
-Subletter:<br>
-<input type="text" name="name" ng-model="post.owner"><br>
-Address:<br>
-<input type="text" name="address1" ng-model="post.address1"><br>
-<input type="text" name="address2" ng-model="post.address2"><br>
+    <div style="width:75%;margin:auto">
+      <form ng-submit="append(resident)">
+        <select ng-model="resident.ros">
+          <option>suite mate</option>
+          <option>room mate</option>
+        </select>
+        <label> age</label><input type="text" ng-model="resident.age">
+        <select ng-model="resident.gender">
+          <option>male</option>
+          <option>female</option>
+          <option>other</option>
+        </select>
+        <button type="submit">add resident</button>
+      </form>
+      </div>
+  <div style="padding:10px">
+      <form ng-submit="create(post)">
+        <div class="flex-item">
+          Subletter:<br>
+          <input type="text" name="name" ng-model="post.owner"><br>
+            Address:<br>
+          <input type="text" name="address1" ng-model="post.address1"><br>
+          <input type="text" name="address2" ng-model="post.address2"><br>
 
-City:<br>
-<input type="text" name="city" ng-model="post.city"><br>
-State:<br>
-<input type="state" name="state" ng-model="post.state"><br>
-Zipcode:<br>
-<input type="text" name="zipcode" ng-model="post.zip"><br>
-Email:<br>
-<input type="text" name="email" ng-model="post.email"><br>
-Phone:<br>
-<input type="text" name="phone" ng-model="post.phone"><br><br>
+          City:<br>
+          <input type="text" name="city" ng-model="post.city"><br>
+          State:<br>
+          <input type="state" name="state" ng-model="post.state"><br>
+          Zipcode:<br>
+          <input type="text" name="zipcode" ng-model="post.zip"><br>
+          Email:<br>
+          <input type="text" name="email" ng-model="post.email"><br>
+          Phone:<br><input type="text" name="phone" ng-model="post.phone"><br><br>
+        </div>
 
-
-
-
-
-<b>Pets:</b><br>
-<input type="radio" name="pets" ng-true-value="true" ng-false-value="false">Allowed<br>
-
-
-<b>Appliances:</b><br>
-<input type="checkbox" ng-model="post.wifi" ng-true-value="true" ng-false-value="false">Wifi<br>
-<input type="checkbox" ng-model="post.fridge" ng-true-value="true" ng-false-value="false">Fridge<br>
-<input type="checkbox" ng-model="post.parking" ng-true-value="true" ng-false-value="false">Parking<br>
-<input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
-Move In Date<input type="date" ng-model="post.movein"><br>
-Move Out Date<input type="date" ng-model="post.moveout">
-<br><br>
-
-Price:<input type="text" ng-model="post.price"><br>
-
-Guests:<input type="text" ng-model="post.guests"><br>
-
-<b>Short Description: </b><br><textarea name="description" value="about your space..." rows="50" cols="50" ng-model="post.description"><br><br></textarea>
-
-<br><br><label class="label"><button type="submit">submit</button></label>
+        <div class="flex-item" style="vertical-align:top;line-height:30px">
+          <b>Pets:</b><br>
+          <input type="radio" name="pets" ng-true-value="true" ng-false-value="false">Allowed<br>
+          <b>Appliances:</b><br>
+          <input type="checkbox" ng-model="post.wifi" ng-true-value="true" ng-false-value="false">Wifi<br>
+          <input type="checkbox" ng-model="post.fridge" ng-true-value="true" ng-false-value="false">Fridge<br>
+          <input type="checkbox" ng-model="post.parking" ng-true-value="true" ng-false-value="false">Parking<br>
+          <input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
+          Move In Date<input type="date" ng-model="movein"><br>
+          Move Out Date<input type="date" ng-model="moveout">
+          <br>
+        </div>
 
 </form>
 </div>
+
+
+<div style="padding-left: 12%;width:95%">
+<b>Short Description: <br><textarea name="description" value="about your space..." rows="40" cols="20" ng-model="post.description" style="width: 80%;height:150px"></textarea><br><br>
+<label class="label"><button style="width:20%" type="submit">submit</button></label><br>
 </div>
+
+</div>
+
+
 <div ng-repeat="each in current_residents track by $index" class="residents">
 <b>Other residents:</b><br>
 <p>Suite mate or Room mate: {{each.ros}}</p>
 <p>age: {{each.age}} </p>
 <p>gender: {{each.gender}}</p>
 </div>
-
-
-
-
