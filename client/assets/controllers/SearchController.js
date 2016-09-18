@@ -7,7 +7,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
     $scope.search = function(data) { //ng-click home, listing
         console.log(data);
         PostFactory.getSearchResults(data, function(result) {
-            $scope.listings = result.data; //display all objects
+           //display all objects
             $location.url('/search');
         })
         $location.url('/search');
@@ -31,7 +31,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
         if (results !== null) {
             $scope.listings = results;//[{price:120, id:'1', address1: "egsdf"}, {price:1440, id:'2', address1: "egfd"}]//results;
         }
-        console.log($scope.searchResults)
+        console.log(results)
     }
     
     $scope.show = function(id){
