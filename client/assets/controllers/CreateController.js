@@ -1,4 +1,5 @@
 console.log('angular create controller')
+
 app.controller('CreateController', ['$scope', 'CreateFactory', '$location', function($scope, PostFactory, $location) {
     
     post.residents = []
@@ -21,3 +22,4 @@ app.controller('CreateController', ['$scope', 'CreateFactory', '$location', func
 
 
 }])
+

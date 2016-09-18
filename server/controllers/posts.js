@@ -19,5 +19,21 @@ function PostsController(){
 			res.json(user);
 		})
 	}
+<<<<<<< HEAD
  }
  module.exports = new PostsController();
+=======
+        
+        this.getListings = function(req,res){
+            if (req.body.moveIn == null && req.body.moveOut == null) {
+                Post.find({zip:req.body.zip});
+            } else if (req.body.moveIn !== null && req.body.moveOut == null) {
+                
+            }
+            
+            
+        
+ };
+ 
+ //req 4 attributes: price, moveIn, moveOut, zip
+>>>>>>> origin/master
