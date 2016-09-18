@@ -19,4 +19,5 @@ function PostsController(){
 			res.json(user);
 		})
 	}
- };
+ }
+ module.exports = new PostsController();

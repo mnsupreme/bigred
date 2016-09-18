@@ -8,10 +8,11 @@ function UsersController(){
 	this.login = function(req,res){
 		console.log('login server controller function fired')
 		User.findOne({username: req.body.username, password: req.body.password}, function(err, user){
-			if(err){
+			if(err || user == null){
 				console.log(err)
 				return
 			}
+			console.log(user)
 			res.json(user);
 		})
 
