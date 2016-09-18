@@ -1,5 +1,5 @@
 console.log("angular create factory")
-app.factory('CreateFactory', function() {
+app.factory('PostFactory', function() {
     var factory = {}
     
     factory.addListing = function(data, callback) {
