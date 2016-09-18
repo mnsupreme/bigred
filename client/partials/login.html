@@ -1,12 +1,12 @@
 
-<h1 class='log_in_header'>Log In</h1>
+<h1 class='log_in_header' margin='50%'>Log In</h1>
   <form class='log_in_boxes' ng-submit="login(user)">
     Email:<input type="text" ng-model="user.email">
     Password:<input type="text" ng-model="user.password">
     <button class='default' type='submit'>Log In</button>
   </form>
  <div>{{loginerrors}}</div>
-  <h1 class='log_in_header'>Register</h1>
+  <h1 class='log_in_header' >Register</h1>
   <form class='log_in_boxes' ng-submit="register(new)">
     Email:<input type="text" ng-model="new.email" >
     Password:<input type="text" ng-model="new.password">
@@ -14,15 +14,29 @@
   </form>
   <div>{{registererrors}}</div>
 <style>
+  body {
+      background-image: url("https://pixabay.com/static/uploads/photo/2016/02/18/22/18/picnic-1208229_960_720.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+       -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
 .log_in_boxes{
   padding:2%;
   margin-left: 30%;
+  margin-right: 30%;
+  background-color:rgba(254, 216, 179, 0.6);
 
 }
 
 .log_in_boxes input{
   display:block;
   width:60%;
+  margin-left: 30%;
 }
 
 .log_in_boxes button{
