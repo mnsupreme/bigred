@@ -19,7 +19,7 @@ function PostsController(){
 			res.json(user);
 		})
 	}
-        
+         
         this.getListings = function(req,res){
             if (req.body.moveIn == null && req.body.moveOut == null) {
                 Post.find({zip:req.body.zip, price: {$lt: req.body.price}});
@@ -31,7 +31,8 @@ function PostsController(){
                 Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
                     moveIn: {$lt: req.body.moveIn}, moveOut: {$gt: req.body.moveIn}});
             }
-            
-            
-        
+        }       
  };
+ 
+module.exports = new PostsController();
+

@@ -16,6 +16,9 @@ var PostSchema = new mongoose.Schema({
   washer: Boolean,
   parking: Boolean,
   fridge: Boolean,
+  gender:String,
+  movein: String,
+  moveout: String,
   residents:[],
   _user:[{type: Schema.Types.ObjectId, ref: 'User'}]//one to many where this is the many
 

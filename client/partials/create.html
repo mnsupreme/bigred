@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
 
-<header>
   <style>
  header {background: darkseagreen;color: white; width: 100%; margin: 0%}
   </style>
@@ -34,54 +31,62 @@
 
 <div class="flex-container">
   <div class="flex-item">
-<form action="action_page.php">
+<form ng-submit="create(post)">
 Subletter:<br>
-<input type="text" name="name"><br>
+<input type="text" name="name" ng-model="post.owner"><br>
 Address:<br>
-<input type="text" name="address1"><br><input type="text" name="address2"><br>
+<input type="text" name="address1" ng-model="post.address1"><br>
+<input type="text" name="address2" ng-model="post.address2"><br>
+
 City:<br>
-<input type="text" name="city"><br>
+<input type="text" name="city" ng-model="post.city"><br>
 State:<br>
-<input type="state" name="state"><br>
+<input type="state" name="state" ng-model="post.state"><br>
 Zipcode:<br>
-<input type="text" name="zipcode"><br>
+<input type="text" name="zipcode" ng-model="post.zip"><br>
 Email:<br>
-<input type="text" name="email"><br>
+<input type="text" name="email" ng-model="post.email"><br>
 Phone:<br>
-<input type="text" name="phone"><br><br>
+<input type="text" name="phone" ng-model="post.phone"><br><br>
 
 </div>
 
 <div class="flex-item">
-<b>Gender:</b><br>
-<input type="radio" name="male" value="male">Male <br>
-<input type="radio" name="female" value="female">Female<br>
-<input type="radio" name="other" value="other">Doesn't matter<br><br>
 
 <b>Pets:</b><br>
-<input type="radio" name="pets" value="yes">Allowed<br>
-<input type="radio" name="pets" value="no">Not allowed <br><br>
+<input type="radio" name="pets" ng-true-value="true" ng-false-value="false">Allowed<br>
+
 
 <b>Appliances:</b><br>
-<input type="checkbox" name="wifi" value="wifi">Wifi<br>
-<input type="checkbox" name="fridge" value="fridge">Fridge<br>
-<input type="checkbox" name="parking" value="parking">Parking<br>
-<input type="checkbox" name="washer" value="washer">Washer<br>
-<input type="checkbox" name="other" value="other">Other: <input type="text" name="other"><br><br>
+<input type="checkbox" ng-model="post.wifi" ng-true-value="true" ng-false-value="false">Wifi<br>
+<input type="checkbox" ng-model="post.fridge" ng-true-value="true" ng-false-value="false">Fridge<br>
+<input type="checkbox" ng-model="post.parking" ng-true-value="true" ng-false-value="false">Parking<br>
+<input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
+Move In Date<input type="date" ng-model="movein"><br>
+Move Out Date<input type="date" ng-model="moveout">
+<br><br>
 </div>
 </div>
 
-<b>Short Description: <b><br><input type="text" name="description" value="about your space..." size="50"><br><br>
+<b>Short Description: <b><br><textarea name="description" value="about your space..." rows="50" cols="50" ng-model="post.description"><br><br></textarea>
 
-<form action="action_page.php">
+<form ng-submit="append(resident)">
 <b>Other residents:</b><br>
-<input type="radio" name="suitemate" value="suitemate">Suitemates: <input type="text" name="suitemates">
-<input type="checkbox" name="roommate" value="roommate">Roommates: <input type="text" name="roommate">
+<select ng-model="resident.ros">
+  <option>suite mate</option>
+  <option>room mate</option>
+</select>
+<label> age</label><input type="text" ng-model="resident.age">
+<select ng-model="resident.gender">
+<option>male</option>
+<option>female</option>
+<option>other</option>
+</select>
+<button type="submit">add resident</button>
 </form>
 
 <br><br><label class="label"><input type="submit" value="Submit"></label>
 </form>
 
-</body>
-</html>
+
 

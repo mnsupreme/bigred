@@ -1,10 +1,23 @@
-console.log('angular create controller')
+console.log('angular create controller');
+
 app.controller('CreateController', ['$scope', 'PostFactory', '$location', function($scope, PostFactory, $location) {
     
-    $scope.createNew = function(data){
-        console.log(data);
-        PostFactory.addListing(data, function(){
-            console.log("data added: " + data);
-        })
-    }}
-])
+    post.residents = [];
+    $scope.createerror = "";
+    $scope.create = function(){
+        console.log('create angular controller function fired');
+        if(post.zip.length !== 5){
+            $scope.createerror = "please enter a valid zip";
+            return;
+        }
+    };
+
+    $scope.append = function(){
+    	console.log('append function fired')
+    	post.residents.push(resident)
+    	
+    };
+
+
+}])
+
