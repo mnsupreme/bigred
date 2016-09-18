@@ -17,12 +17,13 @@ app.factory('PostFactory',['$http', function($http){
            r = result.data;
            callback(r);
            console.log(r)
+         factory.results = r;
+        console.log(factory.results)
        });
        
        //var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
        //callback(results)
-       console.log(r)
-       factory.results = r;
+
     };
     
     factory.storeCurrent = function(item){

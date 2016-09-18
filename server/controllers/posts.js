@@ -42,8 +42,16 @@ function PostsController(){
             console.log(req.body.zip)
 
             var newPrice = parseInt(req.body.price);
-        
-            if (req.body.moveIn == null && req.body.moveOut == null) {
+
+            Post.find({zip:req.body.zip}, function(err, listings){
+                    if (err){
+                        console.log(err);
+                        return;
+                    }
+                  
+                    res.json(listings);
+                })
+            /*if (req.body.moveIn == null && req.body.moveOut == null) {
                 Post.find({zip:req.body.zip}, function(err, listings){
                     if (err){
                         console.log(err);
@@ -82,10 +90,10 @@ function PostsController(){
                     }
                     console.log(listings);
                     res.json(listings);
-                })
-            };
-        };       
- };
+                })*/
+            }
+               
+ }
  
 module.exports = new PostsController();
 
