@@ -16,6 +16,8 @@ app.controller('CreateController', ['$scope', 'PostFactory', '$location', '$loca
             $scope.createerror = "please enter a valid zip";
             return;
         }
+        post.guests = parseInt(post.guests)
+        post.price = parseInt(post.price)
         PostFactory.addListing(post, function(result){
         	console.log('post was successfully added', result)
         	$location.url('/')

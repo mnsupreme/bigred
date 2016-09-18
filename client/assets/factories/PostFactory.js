@@ -6,7 +6,7 @@ app.factory('PostFactory',['$http', function($http){
     
     factory.addListing = function(data, callback) {
        console.log('factory fired');
-       $http.post("/new", data).then(callback)
+       $http.post("/create", data).then(callback)
        factory.newListing = data;
     };
 
