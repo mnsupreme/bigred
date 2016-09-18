@@ -40,18 +40,11 @@ function PostsController(){
         this.getListings = function(req,res){
             console.log('post get listing fired');
             console.log(req.body.zip)
-
+            
+            console.log(req.body.moveIn)
+            console.log(req.body.moveOut)
             var newPrice = parseInt(req.body.price);
-
-            Post.find({zip:req.body.zip}, function(err, listings){
-                    if (err){
-                        console.log(err);
-                        return;
-                    }
-                  
-                    res.json(listings);
-                })
-            /*if (req.body.moveIn == null && req.body.moveOut == null) {
+            if (req.body.moveIn == null && req.body.moveOut == null) {
                 Post.find({zip:req.body.zip}, function(err, listings){
                     if (err){
                         console.log(err);
@@ -61,8 +54,8 @@ function PostsController(){
                     res.json(listings);
                 });
             } else if (req.body.moveIn !== null && req.body.moveOut == null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
-                    moveIn: {$lt: req.body.moveIn}}, function(err, listings){
+                Post.find({$and:[{zip:req.body.zip}, {price: {"$lte": req.body.price}}, 
+                    {movein: {"$gte": req.body.moveIn}}]}, function(err, listings){
                     if (err){
                         console.log(err);
                         return;
@@ -71,8 +64,8 @@ function PostsController(){
                     res.json(listings);
                 });
             } else if (req.body.moveIn == null && req.body.moveOut !== null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
-                    moveOut: {$gt: req.body.moveIn}}, function(err, listings){
+                Post.find({$and:[{zip:req.body.zip}, {price: {"$lte": req.body.price}}, 
+                    {moveout: {"$gte": req.body.moveOut}}]}, function(err, listings){
                     if (err){
                         console.log(err);
                         return;
@@ -81,8 +74,8 @@ function PostsController(){
                     res.json(listings);
                 });
             } else {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
-                    moveIn: {$lt: req.body.moveIn}, moveOut: {$gt: req.body.moveIn}}, 
+                Post.find({$and:[{zip:req.body.zip}, {price: {"$lte": req.body.price}}, 
+                    {movein: {"$gte": req.body.moveIn}}, {moveout: {"$gte": req.body.moveOut}}]}, 
                 function(err, listings){
                     if (err){
                         console.log(err);
@@ -90,9 +83,9 @@ function PostsController(){
                     }
                     console.log(listings);
                     res.json(listings);
-                })*/
+                })
             }
-               
+          }     
  }
  
 module.exports = new PostsController();

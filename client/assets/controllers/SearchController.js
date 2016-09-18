@@ -1,16 +1,21 @@
 console.log('angular search controller')
-app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$routeParams', function($scope, PostFactory, $location, $routeParams) {
+app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$routeParams', '$localStorage', function($scope, PostFactory, $location, $routeParams, $localStorage) {
     
-    displayResults();
+    if($localStorage.listing != null){
+        $scope.listing = $localStorage.listing
+    }
     getItem();
     
     $scope.search = function(data) { //ng-click home, listing
         console.log(data);
         PostFactory.getSearchResults(data, function(result) {
            //display all objects
+           console.log(result)
+           $localStorage.listing = result.data;
+           console.log($localStorage.listing, 'callback')
             $location.url('/search');
         })
-        $location.url('/search');
+        
     };
     
     $scope.changeToNew = function() {
@@ -25,6 +30,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
         $scope.current = PostFactory.getCurrent()
     }
     
+<<<<<<< Updated upstream
     function displayResults() {
         var results = PostFactory.results;
         console.log(results);
@@ -36,6 +42,9 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
         }
         console.log(results)
     }
+=======
+    
+>>>>>>> Stashed changes
     
     $scope.show = function(id){
 
