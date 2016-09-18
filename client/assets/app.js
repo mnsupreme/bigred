@@ -15,7 +15,7 @@ app.config(function ($routeProvider) {
             controller: 'SearchController'
         })
     .when('/new',{
-            templateUrl: 'partials/new.html',
+            templateUrl: 'partials/create.html',
             controller: 'CreateController'
         })
     .when('/login',{

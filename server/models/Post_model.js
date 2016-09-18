@@ -20,7 +20,7 @@ var PostSchema = new mongoose.Schema({
   movein: String,
   moveout: String,
   residents:[],
-  _user:[{type: Schema.Types.ObjectId, ref: 'User'}]//one to many where this is the many
+  _user: {type: Schema.Types.ObjectId, ref: 'User'}//one to many where this is the one
 
 }, {timestamps: true  });
 // register the schema as a model

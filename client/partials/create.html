@@ -1,6 +1,10 @@
 
   <style>
  header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+
+ .residents{
+  display: {{display}};
+}
   </style>
   <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
 </header>
@@ -31,6 +35,19 @@
 
 <div class="flex-container">
   <div class="flex-item">
+  <form ng-submit="append(resident)">
+<select ng-model="resident.ros">
+  <option>suite mate</option>
+  <option>room mate</option>
+</select>
+<label> age</label><input type="text" ng-model="resident.age">
+<select ng-model="resident.gender">
+<option>male</option>
+<option>female</option>
+<option>other</option>
+</select>
+<button type="submit">add resident</button>
+</form>
 <form ng-submit="create(post)">
 Subletter:<br>
 <input type="text" name="name" ng-model="post.owner"><br>
@@ -49,9 +66,9 @@ Email:<br>
 Phone:<br>
 <input type="text" name="phone" ng-model="post.phone"><br><br>
 
-</div>
 
-<div class="flex-item">
+
+
 
 <b>Pets:</b><br>
 <input type="radio" name="pets" ng-true-value="true" ng-false-value="false">Allowed<br>
@@ -65,28 +82,24 @@ Phone:<br>
 Move In Date<input type="date" ng-model="movein"><br>
 Move Out Date<input type="date" ng-model="moveout">
 <br><br>
+
+
+
+
+<b>Short Description: </b><br><textarea name="description" value="about your space..." rows="50" cols="50" ng-model="post.description"><br><br></textarea>
+
+<br><br><label class="label"><button type="submit">submit</button></label>
+
+</form>
 </div>
 </div>
-
-<b>Short Description: <b><br><textarea name="description" value="about your space..." rows="50" cols="50" ng-model="post.description"><br><br></textarea>
-
-<form ng-submit="append(resident)">
+<div ng-repeat="each in current_residents track by $index" class="residents">
 <b>Other residents:</b><br>
-<select ng-model="resident.ros">
-  <option>suite mate</option>
-  <option>room mate</option>
-</select>
-<label> age</label><input type="text" ng-model="resident.age">
-<select ng-model="resident.gender">
-<option>male</option>
-<option>female</option>
-<option>other</option>
-</select>
-<button type="submit">add resident</button>
-</form>
+<p>Suite mate or Room mate: {{each.ros}}</p>
+<p>age: {{each.age}} </p>
+<p>gender: {{each.gender}}</p>
+</div>
 
-<br><br><label class="label"><input type="submit" value="Submit"></label>
-</form>
 
 
 
