@@ -4,7 +4,7 @@ app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$l
 		$scope.registererrors = ""
 		$scope.loginerrors = ""
 		$scope.login = function(user){
-			UserFactory.login(user, function(result){
+			UserFactory.login(user, function(result, err){
 				if(err){
 					$scope.loginerrors = "invalid login"
 				}

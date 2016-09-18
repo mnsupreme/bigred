@@ -4,7 +4,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
     
     $scope.search = function(data) { //ng-click home, listing
         console.log(data);
-        SearchFactory.getSearchResults(data, function(result) {
+        PostFactory.getSearchResults(data, function(result) {
             $scope.listings = result; //display all objects
             console.log($scope.searchResults);
             $location.url('/search');
@@ -16,7 +16,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
     }
     
     function displayResults() {
-        var results = SearchFactory.results;
+        var results = PostFactory.results;
         console.log(results);
         if (results !== null) {
             $scope.listings = results;
