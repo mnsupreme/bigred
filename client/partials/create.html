@@ -1,3 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<header>
+  <style>
+ header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+  </style>
+  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+</header>
+
+<article class="article">
+  <h1>Post your listing</h1>
+  <p>Fill out the following information about your seblet space.</p><br>
+</article>
+
+<head>
+<style>
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: opacity;
+}
+
+.flex-item {
+    background-color: opacity;
+    width: 50%;
+    height: 50%;
+    margin: 10px;
+}
+</style>
+</head>
+
+<div class="flex-container">
+  <div class="flex-item">
+<form action="action_page.php">
+Subletter:<br>
+<input type="text" name="name"><br>
+Address:<br>
+<input type="text" name="address1"><br><input type="text" name="address2"><br>
+City:<br>
+<input type="text" name="city"><br>
+State:<br>
+<input type="state" name="state"><br>
+Zipcode:<br>
+<input type="text" name="zipcode"><br>
+Email:<br>
+<input type="text" name="email"><br>
+Phone:<br>
+<input type="text" name="phone"><br><br>
+
+</div>
+
+<div class="flex-item">
+<b>Gender:</b><br>
+<input type="radio" name="male" value="male">Male <br>
+<input type="radio" name="female" value="female">Female<br>
+<input type="radio" name="other" value="other">Doesn't matter<br><br>
+
+<b>Pets:</b><br>
+<input type="radio" name="pets" value="yes">Allowed<br>
+<input type="radio" name="pets" value="no">Not allowed <br><br>
+
 <b>Appliances:</b><br>
 <input type="checkbox" name="wifi" value="wifi">Wifi<br>
 <input type="checkbox" name="fridge" value="fridge">Fridge<br>
@@ -20,3 +84,4 @@
 
 </body>
 </html>
+
