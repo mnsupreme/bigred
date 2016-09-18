@@ -3,7 +3,7 @@
     <input ng-model="searchData.duration"> 
     <button ng-click="search(searchData)"> Search </button>
     <div ng-repeat="item in listings"> 
-    {{item}}
+        <a href="#/search/{{item.id}}">{{item}}</a>
     </div>
     <button ng-click="changeToNew()"> Go to new </button>
 </div>

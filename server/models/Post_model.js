@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 // build your friend schema and add it to the mongoose.models
 var PostSchema = new mongoose.Schema({
   owner: String,
-  Adress1: String,
-  Adress2: String,
+  address1: String,
+  address2: String,
   description: String,
   zip: String,
   guests: Number,

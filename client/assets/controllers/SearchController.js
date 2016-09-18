@@ -1,3 +1,4 @@
+console.log('angular search controller')
 app.controller('SearchController', ['$scope', 'PostFactory', '$location', function($scope, SearchFactory, $location) {
     
     displayResults();
