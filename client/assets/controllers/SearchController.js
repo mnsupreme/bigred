@@ -1,5 +1,5 @@
 console.log('angular search controller')
-app.controller('SearchController', ['$scope', 'PostFactory', '$location', function($scope, PostFactory, $location) {
+app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$routeParams', function($scope, PostFactory, $location, $routeParams) {
     
     displayResults();
     getItem();
@@ -34,7 +34,9 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
         console.log($scope.searchResults)
     }
     
-    
+    $scope.show = function(id){
+
+    } 
     
 }]);
 

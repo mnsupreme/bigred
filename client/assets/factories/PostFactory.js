@@ -26,6 +26,11 @@ app.factory('PostFactory',['$http', function($http){
     factory.getCurrent = function() {
         return factory.currentListing;
     }
+
+    factory.show = function(id,callback){
+      console.log('show factory function fired')
+      $http.get('/show/'+id).then(callback)
+    }
     
    return factory;
 
