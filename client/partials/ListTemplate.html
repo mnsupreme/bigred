@@ -4,17 +4,7 @@
  .residents{
   display: {{display}};
 }
-  </style>
-  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
-</header>
 
-<article class="article">
-  <h1>Post your listing</h1>
-  <p>Fill out the following information about your seblet space.</p><br>
-</article>
-
-<head>
-<style>
 .flex-container {
     display: -webkit-flex;
     display: flex;
@@ -29,13 +19,19 @@
     height: 50%;
     margin: 10px;
 }
-</style>
-</head>
+  </style>
+ <header>
+  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+</header>
+
+<article class="article">
+  <h1>Post your listing</h1>
+  <p>Fill out the following information about your seblet space.</p><br>
+</article>
 
 <div class="flex-container">
   <div class="flex-item">
-  
-
+ 
 
 Subletter:<br>{{show.owner}}
 <br>
@@ -54,13 +50,8 @@ Email:<br>
 Phone:<br>
 {{show.phone}}<br><br>
 
-
-
-
-
 <b>Pets:</b><br>
 Allowed?: {{show.pets}}
-
 
 <b>Appliances:</b><br>
 Wifi? {{show.wifi}}<br>
@@ -72,9 +63,7 @@ Move Out Date {{show.moveout}}
 <br><br>
 
 
-
-
-<b>Short Description: </b><br>{{show.description}}<br><br></textarea>
+<textarea><b>Short Description: </b><br>{{show.description}}<br><br></textarea>
 
 <br><br>
 </div>
