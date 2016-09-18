@@ -30,21 +30,19 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
         $scope.current = PostFactory.getCurrent()
     }
     
-<<<<<<< Updated upstream
+
     function displayResults() {
         var results = PostFactory.results;
         console.log(results);
         if (results !== null) {
             $scope.listings = results;//[{price:120, id:'1', address1: "egsdf", 
-                    residents:[{age:'10', gender:"female", ros:'apartment mate'}, 
-                        {age:'13', gender:"male", ros:'roommate'}]}, 
-                {price:1440, id:'2', address1: "egfd"}]//results;
+                    //residents:[{age:'10', gender:"female", ros:'apartment mate'}, 
+                        //{age:'13', gender:"male", ros:'roommate'}]}, 
+                //{price:1440, id:'2', address1: "egfd"}]//results;
         }
         console.log(results)
     }
-=======
-    
->>>>>>> Stashed changes
+
     
     $scope.show = function(id){
 

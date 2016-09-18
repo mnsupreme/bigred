@@ -1,7 +1,12 @@
 <style>
  
  body {
-      background-image: url("background.jpg");
+
+       background: url(https://pixabay.com/static/uploads/photo/2016/02/18/22/18/picnic-1208229_960_720.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
@@ -10,7 +15,9 @@
  header {background: cadetblue; color: ivory; width: 100%; margin: 0%; font-family: Tahoma
     }
  .residents{
+  color: white;
   display: {{display}};
+
 }
 
 .flex-container {
@@ -88,7 +95,10 @@
           <input type="text" name="zipcode" ng-model="post.zip"><br>
           Email:<br>
           <input type="text" name="email" ng-model="post.email"><br>
-          Phone:<br><input type="text" name="phone" ng-model="post.phone"><br><br>
+          Phone:<br><input type="text" name="phone" ng-model="post.phone"><br>
+          Price:<br><input type="text" name="phone" ng-model="post.price"><br>
+          Guests:<br><input type="text" name="phone" ng-model="post.guests"><br>
+          <br>
         </div>
 
         <div class="flex-item" style="vertical-align:top;line-height:30px">
@@ -99,19 +109,21 @@
           <input type="checkbox" ng-model="post.fridge" ng-true-value="true" ng-false-value="false">Fridge<br>
           <input type="checkbox" ng-model="post.parking" ng-true-value="true" ng-false-value="false">Parking<br>
           <input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
-          Move In Date<input type="date" ng-model="movein"><br>
-          Move Out Date<input type="date" ng-model="moveout">
+          Move In Date<input type="date" ng-model="post.movein"><br>
+          Move Out Date<input type="date" ng-model="post.moveout">
           <br>
         </div>
+        <div style="padding-left: 12%;width:95%">
+<b>Short Description: <br><textarea name="description" value="about your space..." rows="40" cols="20" ng-model="post.description" style="width: 80%;height:150px"></textarea><br><br>
+</div>
+        <label class="label"><button style="width:20%" type="submit">submit</button></label><br>
+
 
 </form>
 </div>
 
 
-<div style="padding-left: 12%;width:95%">
-<b>Short Description: <br><textarea name="description" value="about your space..." rows="40" cols="20" ng-model="post.description" style="width: 80%;height:150px"></textarea><br><br>
-<label class="label"><button style="width:20%" type="submit">submit</button></label><br>
-</div>
+
 
 </div>
 

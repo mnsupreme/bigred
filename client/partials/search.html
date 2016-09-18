@@ -38,16 +38,13 @@
 
 <div class="listings">
     <table>
-<<<<<<< Updated upstream
-        <tr ng-repeat="item in listings">
+
+        <tr ng-repeat="item in listing">
             <th style="padding:2%"> (picture) </th>
             <th ng-click="storeItem(item)" style="padding:2%; width:95%">
-=======
-        <tr ng-repeat="item in listing">
-            <th style="align:left; padding:2%"> (picture) </th>
-            <th ng-click="storeItem(item)" style="align:left; padding:2%">
->>>>>>> Stashed changes
-                <a href="#/search/{{item.id}}" ng-click="storeItem(item)">
+
+       
+                <a href="#/search/{{item._id}}" ng-click="storeItem(item)">
                     Price: {{item.price}}<br>
                     Address: {{item.address1}}<br>
                 </a>
