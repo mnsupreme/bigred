@@ -19,7 +19,7 @@
     }   
 
     table, td, th {
-        border: 1px solid opacity;
+        border-bottom: 1px solid;
     }
     .listings {
         background: mintcream;
@@ -39,8 +39,8 @@
 <div class="listings">
     <table>
         <tr ng-repeat="item in listings">
-            <th style="align:left; padding:2%"> (picture) </th>
-            <th ng-click="storeItem(item)" style="align:left; padding:2%">
+            <th style="padding:2%"> (picture) </th>
+            <th ng-click="storeItem(item)" style="padding:2%; width:95%">
                 <a href="#/search/{{item.id}}" ng-click="storeItem(item)">
                     Price: {{item.price}}<br>
                     Address: {{item.address1}}<br>
