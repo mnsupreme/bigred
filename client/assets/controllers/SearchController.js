@@ -1,7 +1,8 @@
 console.log('angular search controller')
-app.controller('SearchController', ['$scope', 'PostFactory', '$location', function($scope, SearchFactory, $location) {
+app.controller('SearchController', ['$scope', 'PostFactory', '$location', function($scope, PostFactory, $location) {
     
     displayResults();
+    getItem();
     
     $scope.search = function(data) { //ng-click home, listing
         console.log(data);
@@ -14,6 +15,14 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
     
     $scope.changeToNew = function() {
         $location.url('/new');
+    }
+    
+    $scope.storeItem = function(item) {
+        PostFactory.storeCurrent(item);
+    }
+    
+    function getItem() {
+        $scope.current = PostFactory.getCurrent()
     }
     
     function displayResults() {

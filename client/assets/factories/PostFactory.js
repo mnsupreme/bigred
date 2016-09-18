@@ -1,4 +1,4 @@
-console.log("angular create factory")
+console.log("angular post factory")
 app.factory('PostFactory', function() {
     var factory = {}
     
@@ -10,10 +10,18 @@ app.factory('PostFactory', function() {
 
     factory.getSearchResults = function(data, callback) {
        console.log('factory fired');
-       var results = ["listing1", "listing2"]; //populate db
+       var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
        callback(results)
        factory.results = results;
     };
+    
+    factory.storeCurrent = function(item){
+        factory.currentListing = item;
+    }
+    
+    factory.getCurrent = function() {
+        return factory.currentListing;
+    }
     
    return factory;
 })

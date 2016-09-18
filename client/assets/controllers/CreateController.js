@@ -1,9 +1,9 @@
 console.log('angular create controller')
-app.controller('CreateController', ['$scope', 'CreateFactory', '$location', function($scope, CreateFactory, $location) {
+app.controller('CreateController', ['$scope', 'PostFactory', '$location', function($scope, PostFactory, $location) {
     
     $scope.createNew = function(data){
         console.log(data);
-        CreateFactory.addListing(data, function(){
+        PostFactory.addListing(data, function(){
             console.log("data added: " + data);
         })
     }}
