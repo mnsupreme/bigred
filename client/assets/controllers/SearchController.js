@@ -29,7 +29,7 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', '$rout
         var results = PostFactory.results;
         console.log(results);
         if (results !== null) {
-            $scope.listings = results;
+            $scope.listings = results;//[{price:120, id:'1', address1: "egsdf"}, {price:1440, id:'2', address1: "egfd"}]//results;
         }
         console.log($scope.searchResults)
     }

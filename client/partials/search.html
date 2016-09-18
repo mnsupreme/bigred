@@ -38,15 +38,16 @@
 <div class="listings">
     <table>
         <tr ng-repeat="item in listings">
-            <a href="#/search/{{item.id}}" ng-click="storeItem(item)">
+        
             <th style="align:left; padding:2%"> (picture) </th>
-            <th style="align:left; padding:2%">
-                Price: {{item.price}}<br>
-                Address: {{item.address1}}<br>
-            </th></a>
+            <th ng-click="storeItem(item)" style="align:left; padding:2%">
+                <a href="#/search/{{item.id}}" ng-click="storeItem(item)">
+                    Price: {{item.price}}<br>
+                    Address: {{item.address1}}<br>
+                </a>
+            </th>
         </tr>
     </table>
->>>>>>> origin/master
 </div>
 </html>
 
