@@ -1,21 +1,34 @@
 console.log('angular create controller');
 
-app.controller('CreateController', ['$scope', 'PostFactory', '$location', function($scope, PostFactory, $location) {
-    
-    post.residents = [];
+app.controller('CreateController', ['$scope', 'PostFactory', '$location', '$localStorage', function($scope, PostFactory, $location, $localStorage) {
+  	$localStorage.user_id
+    console.log($localStorage.user_id)
+    $scope.number = 0;
     $scope.createerror = "";
-    $scope.create = function(){
+    $scope.post = {
+    	residents:[],
+    	user_id: $localStorage.user_id
+    }
+    $scope.display = "hidden"
+    $scope.create = function(post){
         console.log('create angular controller function fired');
-        if(post.zip.length !== 5){
+        if(!$scope.post.zip || $scope.post.zip.length !== 5){
             $scope.createerror = "please enter a valid zip";
             return;
         }
+        PostFactory.addListing(post, function(result){
+        	console.log('post was successfully added', result)
+        	$location.url('/')
+        })
     };
 
-    $scope.append = function(){
+    $scope.append = function(resident){
     	console.log('append function fired')
-    	post.residents.push(resident)
-    	
+    	$scope.post.residents.push(resident)
+    	$scope.number += 1
+    	$scope.current_residents = $scope.post.residents
+    	$scope.display = 'block'
+
     };
 
 

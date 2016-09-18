@@ -6,33 +6,44 @@ var Post = mongoose.model('Post')
 function PostsController(){
 
 	this.create = function(req,res){
-		console.log('posts server controller function fired');
-                var residents = req.body.residents;	
-                req.body.residents = null;
-                var post = new Post(req.body);
-                req.body.residents = residents;
-                post.save(function(err, user){
-			if(err){
-				console.log(err)
-				return
-			}
-			res.json(user);
-		})
-	}
-         
-        this.getListings = function(req,res){
+		console.log('create posts server controller function fired', req.body);
+                	
+                var user_id = req.body.user_id
+                delete req.body.user_id
+           
+                User.findOne({_id:user_id}, function(err,user){
+                	console.log(user, 'user found')
+                	req.body._user = user_id;
+                	Post.create(req.body, function(err, post){
+                		if(err){
+                			console.log(err)
+                			return
+                		}
+                		console.log('post created',post)
+                		user._post.push(post)
+                		console.log('pushed post to user', user)
+                		user.save(function(err){
+                			if(err){
+                				console.log(err)
+                				return
+                			}
+                			console.log('user saved', user)
+                			res.json(post)
+                		})
+                	})
+       })
+     }
+
+    this.getListings = function(req,res){
             if (req.body.moveIn == null && req.body.moveOut == null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}});
+                Post.find({zip:req.body.zip});
             } else if (req.body.moveIn !== null && req.body.moveOut == null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, moveIn: {$lt: req.body.moveIn}});
-            } else if (req.body.moveIn == null && req.body.moveOut !== null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, moveOut: {$gt: req.body.moveIn}});
-            } else {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
-                    moveIn: {$lt: req.body.moveIn}, moveOut: {$gt: req.body.moveIn}});
+                
             }
-        }       
- };
- 
-module.exports = new PostsController();
+
+	 }
+
+}
+	
+ module.exports = new PostsController();
 

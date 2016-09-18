@@ -1,10 +1,10 @@
 console.log("angular post factory")
-app.factory('PostFactory', function() {
+app.factory('PostFactory',['$http', function($http){
     var factory = {}
     
     factory.addListing = function(data, callback) {
-       console.log('factory fired');
-       http.post("/new", data).then(callback)
+       console.log('create listing factory fired');
+       $http.post("/new", data).then(callback)
        factory.newListing = data;
     };
 
@@ -24,4 +24,4 @@ app.factory('PostFactory', function() {
     }
     
    return factory;
-})
+}])

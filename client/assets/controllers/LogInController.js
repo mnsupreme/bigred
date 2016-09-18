@@ -1,6 +1,6 @@
 console.log('angular login controller')
 app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$localStorage', '$location', function($scope, UserFactory,  $routeParams, $localStorage, $location){
-		$scope.$storage = $localStorage
+		$scope.$storage = $localStorage.user_id
 		$scope.registererrors = ""
 		$scope.loginerrors = ""
 		$scope.login = function(user){
@@ -10,7 +10,7 @@ app.controller('LogInController', ['$scope', 'UserFactory',  '$routeParams', '$l
 					$scope.loginerrors = "invalid login"
 				}
 				else{
-				$localStorage = result.data
+				$localStorage.user_id = result.data._id
 				$location.url('/search')
 				}
 			})
