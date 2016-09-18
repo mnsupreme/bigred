@@ -1,2 +1,87 @@
-<div> {{current.name}}</div>
-<div> {{current.id}}</div>
+ <style>
+ header {background: darkseagreen;color: white; width: 100%; margin: 0%}
+
+ .residents{
+  display: {{display}};
+}
+  </style>
+  <h1 style="text-align:center;padding:2%;">&hearts; Subletter &hearts;</h1>
+</header>
+
+<article class="article">
+  <h1>Post your listing</h1>
+  <p>Fill out the following information about your seblet space.</p><br>
+</article>
+
+<head>
+<style>
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: opacity;
+}
+
+.flex-item {
+    background-color: opacity;
+    width: 50%;
+    height: 50%;
+    margin: 10px;
+}
+</style>
+</head>
+
+<div class="flex-container">
+  <div class="flex-item">
+  
+
+
+Subletter:<br>{{show.owner}}
+<br>
+Address:<br>{{show.address1}}
+<br>
+{{address2}}<br>
+
+City:<br>
+{{show.city}}
+State:<br>
+{{show.state}}
+Zipcode:<br>
+{{show.zip}}<br>
+Email:<br>
+{{show.email}}<br>
+Phone:<br>
+{{show.phone}}<br><br>
+
+
+
+
+
+<b>Pets:</b><br>
+Allowed?: {{show.pets}}
+
+
+<b>Appliances:</b><br>
+Wifi? {{show.wifi}}<br>
+Fridge? {{show.fridge}}<br>
+Parking? {{show.parking}}<br>
+<input type="checkbox" ng-model="post.washer" ng-true-value="true" ng-false-value="false">Washer<br>
+Move In Date {{show.movein}}<br>
+Move Out Date {{show.moveout}}
+<br><br>
+
+
+
+
+<b>Short Description: </b><br>{{show.description}}<br><br></textarea>
+
+<br><br>
+</div>
+</div>
+<div ng-repeat="each in show.residents" class="residents">
+<b>Other residents:</b><br>
+<p>Suite mate or Room mate: {{each.ros}}</p>
+<p>age: {{each.age}} </p>
+<p>gender: {{each.gender}}</p>
+</div>

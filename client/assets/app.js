@@ -22,10 +22,6 @@ app.config(function ($routeProvider) {
             templateUrl: 'partials/login.html',
             controller: 'LogInController'
         })
-    .when('/show/:id',{
-        templateUrl: 'partials/show.html',
-        controller: 'SearchController'
-    })
     .otherwise({
           redirectTo: '/'
         });

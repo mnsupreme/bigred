@@ -1,8 +1,153 @@
-<div>
-    <input ng-model="searchData.price"> 
-    <input ng-model="searchData.zip"> 
-    <button ng-click="search(searchData)"> Search </button>
-    
+
+ 
+<style>
+    body {
+        background-image: url("https://pixabay.com/static/uploads/photo/2016/02/18/22/18/picnic-1208229_960_720.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+       -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }   
+.big {
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+ .infoInput{
+  width: 50%;
+  margin: auto;
+}
+
+.flex2{
+  /*display: flex;*/
+  justify-content:center;
+  align-content: space-around;
+  align-items: center;
+  font-family: "Baskerville W01 Regular_705699"
+  font-size: 20px;
+  width: 75%;
+  height:100%;
+  margin: auto;
+  padding: 1%;
+  background-color:rgba(254, 216, 179, 0.6);
+  
+}
+
+.flex2 div{
+  margin: 2% auto;
+  text-align: left;
+  width: 80%;
+}
+
+.flex2 input{
+  float: right;
+}
+
+input {
+  width: 160px;
+}
+
+header {
+    background: dimgrey ;
+    color: ivory ; 
+    width: 100%; 
+    margin: 0%; 
+    font-family: Tahoma
+  }
+
+footer {
+    background: grey ;
+    color:white;
+  } 
+
+
+
+.try {
+    text-decoration: none;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    width: 4%;
+    height: 7%;
+    border: 2px solid black;
+    background-color:grey;
+    color:black;
+    font-weight: bold;
+}
+
+.try2 {
+    text-decoration: none;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    width: 4%;
+    height: 7%;
+    border: 2px solid black;
+    background-color:grey;
+    color:black;
+    font-weight: bold;
+}
+
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+ padding: 0;
+}
+   
+.nav ul a {
+ text-decoration: none;
+}
+
+.tab {
+padding-left:5em;
+}
+
+.submitButton{
+  top: 4%;
+  right: 4%;
+  width:100px;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+
+</style>
+
+
+
+<div class="big">
+  <header>
+    <h1>Subletr </h1>
+    <a href="#/login" class="try" type="submit">Log in</a>
+    <a href="#/new" class="try2" type="submit">Post</a>
+  </header>
+    <div class="infoInput">    
+
+    <div>
+      <form class="flex2" ng-submit="search(query)">
+          <h4>Quick Search</h4>
+        <div>
+          <div><label>Zipcode:<input type="text" name="Zipcode" ng-model="query.zip"></label></div>
+          <div><label>Price:<input type="text" name="Price" ng-model="query.price"></label><br></div>
+          <div><label>Move-in Date:<input type="datetime-local" name="moveIn" ng-model="query.moveIn"></label></div>
+          <div><label>Move-Out Date: <input type="datetime-local" name="query.moveOut"></label></div><br>
+          <div><button class="submitButton" type="submit" value="Submit" text-align="right">Search</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
+
 
 
