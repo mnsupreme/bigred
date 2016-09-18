@@ -22,13 +22,16 @@ function PostsController(){
         
         this.getListings = function(req,res){
             if (req.body.moveIn == null && req.body.moveOut == null) {
-                Post.find({zip:req.body.zip});
+                Post.find({zip:req.body.zip, price: {$lt: req.body.price}});
             } else if (req.body.moveIn !== null && req.body.moveOut == null) {
-                
+                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, moveIn: {$lt: req.body.moveIn}});
+            } else if (req.body.moveIn == null && req.body.moveOut !== null) {
+                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, moveOut: {$gt: req.body.moveIn}});
+            } else {
+                Post.find({zip:req.body.zip, price: {$lt: req.body.price}, 
+                    moveIn: {$lt: req.body.moveIn}, moveOut: {$gt: req.body.moveIn}});
             }
             
             
         
  };
- 
- //req 4 attributes: price, moveIn, moveOut, zip
