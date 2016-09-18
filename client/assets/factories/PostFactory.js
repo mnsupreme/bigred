@@ -11,12 +11,18 @@ app.factory('PostFactory',['$http', function($http){
     };
 
     factory.getSearchResults = function(data, callback) {
+       var r;
        console.log('factory fired');
-       $http.post('/search', data).then(callback);
-       console.log('vsvd')
+       $http.post('/search', data).then(function(result){
+           r = result.data;
+           callback(r);
+           console.log(r)
+       });
+       
        //var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
        //callback(results)
-       //factory.results = results;
+       console.log(r)
+       factory.results = r;
     };
     
     factory.storeCurrent = function(item){
