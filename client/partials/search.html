@@ -1,6 +1,6 @@
 <div>
     <div ng-model="searchData.price"> hello </div>
-    <input ng-model="searchData.duration"> 
+    <input ng-model="searchData.zip"> 
     <button ng-click="search(searchData)"> Search </button>
     <div ng-repeat="item in listings"> 
         <a href="#/search/{{item.id}}" ng-click="storeItem(item)">{{item.name}}</a>
