@@ -41,8 +41,15 @@ function PostsController(){
             console.log('post get listing fired');
             var newZip = parseInt(req.body.zip);
             var newPrice = parseInt(req.body.price);
-            
-            if (req.body.moveIn == null && req.body.moveOut == null) {
+            Post.find({zip:newZip}, function(err, listings){
+                    if (err){
+                        console.log(err);
+                        return;
+                    }
+                    console.log(listings);
+                    res.json(listings);
+                });
+            /*if (req.body.moveIn == null && req.body.moveOut == null) {
                 Post.find({zip:newZip}, function(err, listings){
                     if (err){
                         console.log(err);
@@ -82,7 +89,7 @@ function PostsController(){
                     console.log(listings);
                     res.json(listings);
                 })
-            };
+            };*/
         };       
  };
  
