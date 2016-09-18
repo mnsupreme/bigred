@@ -7,9 +7,10 @@ app.controller('SearchController', ['$scope', 'PostFactory', '$location', functi
     $scope.search = function(data) { //ng-click home, listing
         console.log(data);
         PostFactory.getSearchResults(data, function(result) {
-            $scope.listings = result; //display all objects
+            $scope.listings = result.data; //display all objects
             $location.url('/search');
-        }) 
+        })
+        $location.url('/search');
     };
     
     $scope.changeToNew = function() {

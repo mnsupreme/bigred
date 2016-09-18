@@ -11,6 +11,7 @@ app.factory('PostFactory', ['$http', function($http) {
     factory.getSearchResults = function(data, callback) {
        console.log('factory fired');
        $http.post('/search', data).then(callback);
+       console.log('vsvd')
        //var results = [{name:"listing1", id:'1'}, {name: "listing2", id:'2'}]; //populate db
        //callback(results)
        //factory.results = results;

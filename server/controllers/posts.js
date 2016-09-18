@@ -22,8 +22,11 @@ function PostsController(){
          
         this.getListings = function(req,res){
             console.log('post get listing fired');
+            var newZip = parseInt(req.body.zip);
+            var newPrice = parseInt(req.body.price);
+            
             if (req.body.moveIn == null && req.body.moveOut == null) {
-                Post.find({zip:req.body.zip, price: {$lt: req.body.price}}, function(err, listings){
+                Post.find({zip:newZip}, function(err, listings){
                     if (err){
                         console.log(err);
                         return;
