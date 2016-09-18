@@ -21,6 +21,7 @@ function PostsController(){
 	}
          
         this.getListings = function(req,res){
+            console.log('post get listing fired');
             if (req.body.moveIn == null && req.body.moveOut == null) {
                 Post.find({zip:req.body.zip, price: {$lt: req.body.price}}, function(err, listings){
                     if (err){
